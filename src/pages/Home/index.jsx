@@ -1,9 +1,11 @@
 import { Container } from "./styles";
 
+import { Header } from "../../Components/Header";
+
 export  function Home() {
   return (
     <Container>
-      <h1>Home</h1>
+      <Header />
     </Container>
   );
 }
