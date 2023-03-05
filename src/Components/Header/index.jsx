@@ -1,7 +1,7 @@
 import { FiSearch } from 'react-icons/fi'
 
 import { Input } from "../Input";
-import { Container, Profile, Brand } from "./style";
+import { Container, Profile, Brand } from "./styles";
 
 export function Header() {
   return (

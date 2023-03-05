@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   margin: 5rem;
-  display: flex;
-  gap: 89.6rem;
 
 
   > h2 {

@@ -10,7 +10,4 @@ export const Content = styled.div`
 
   overflow-y: auto;
 
-  display: flex;
-  justify-content: space-between;
-
 `;  
