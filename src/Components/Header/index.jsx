@@ -6,7 +6,7 @@ import { Container, Profile, Brand } from "./styles";
 export function Header() {
   return (
     <Container>
-      <Brand>
+      <Brand to='/'>
         <h1>RocketMovies</h1>
       </Brand>
       <Input placeholder="Pesquisar pelo título" icon={FiSearch} />

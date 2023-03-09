@@ -49,7 +49,7 @@ export const Profile = styled(Link)`
   }
 `;
 
-export const Brand = styled.div`
+export const Brand = styled(Link)`
   grid-area: brand;
   display: flex;
   align-items: center;
