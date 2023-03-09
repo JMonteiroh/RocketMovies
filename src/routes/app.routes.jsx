@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { Home } from '../pages/home';
-import { New } from '../pages/new';
+import { Home } from '../pages/Home';
+import { New } from '../pages/New';
 
 export function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/New" element={<New />} />
+      <Route path="/new" element={<New />} />
     </Routes>
   );
 }

@@ -18,7 +18,7 @@ export const Container = styled.div`
     border: 0;
 
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 1.8rem;
 
     &::placeholder {

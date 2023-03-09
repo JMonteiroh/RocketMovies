@@ -16,8 +16,8 @@ export const Container = styled.section`
       /* min-width: 18.6rem; */
     }
 
-    button{
-      width: 20.7rem;
+    button {
+      width: 21.8rem;
       height: 4.8rem;
     }
   }

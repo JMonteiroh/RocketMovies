@@ -16,7 +16,9 @@ export const Container = styled.button`
 
   display: flex;
   flex-direction: row-reverse;
-  gap: 0.8rem;
+  gap: 1rem;
+
+  align-items: center;
 
   &:disabled {
     opacity: 0.5;

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Container } from './styles';
 import { Button } from '../Button';
 import { FiPlus } from 'react-icons/fi';
@@ -9,11 +11,12 @@ export function Section({ title, children, buttonOn }) {
     >
       <header>
         <h2>{title}</h2>
-        
-        {buttonOn ? <Button 
-              icon={FiPlus} 
-              title='Adicionar Filme'
-            /> : null }
+        <Link to='/new'>
+          {buttonOn ? <Button to="/new"
+                icon={FiPlus} 
+                title='Adicionar Filme'
+              /> : null }
+        </Link>
       </header>
       <main>        
         {children}
