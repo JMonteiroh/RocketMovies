@@ -19,6 +19,7 @@ export const Container = styled.button`
   gap: 1rem;
 
   align-items: center;
+  justify-content: center;
 
   &:disabled {
     opacity: 0.5;

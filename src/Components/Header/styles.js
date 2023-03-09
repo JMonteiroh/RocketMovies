@@ -15,12 +15,12 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   padding: 2.4rem 12.3rem;
-  gap: 6.4rem;
+  gap: 12rem;
 
 `;
 
 export const Profile = styled(Link)`
-  min-width: 19.8rem;
+  min-width: 25rem;
   display: flex;
   align-items: center;
 

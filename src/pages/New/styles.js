@@ -97,9 +97,6 @@ export const Form = styled.form`
     margin-top: 4rem;
 
     > button {
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
       font-weight: 500;
     }
 
