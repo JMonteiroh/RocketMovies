@@ -18,8 +18,8 @@ export function Header() {
         />
 
         <div>
-          <span>Bem-vindo,</span>
           <strong>João Paulo Monteiro</strong>
+          <span>sair</span>
         </div>
       </Profile>
 
