@@ -1,4 +1,4 @@
-import { FiSearch } from 'react-icons/fi'
+  import { FiSearch } from 'react-icons/fi'
 
 import { Input } from "../Input";
 import { Container, Profile, Brand } from "./styles";
@@ -18,8 +18,8 @@ export function Header() {
         />
 
         <div>
-          <span>Bem-vindo,</span>
           <strong>João Paulo Monteiro</strong>
+          <span>sair</span>
         </div>
       </Profile>
 

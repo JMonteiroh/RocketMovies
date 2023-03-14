@@ -5,7 +5,7 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 45.5%;
+    font-size: 62.5%;
   }
 
   body {
@@ -17,7 +17,6 @@ export default createGlobalStyle`
 
   body, input, button, textarea {
     font-family: 'Roboto Slab', serif;
-    font-size: 1.6rem;
   }
 
   a {
