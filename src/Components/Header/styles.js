@@ -20,29 +20,24 @@ export const Container = styled.header`
 `;
 
 export const Profile = styled(Link)`
-  min-width: 26rem;
+  min-width: 25rem;
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
-
 
   > img {
     width:5.6rem;
     height:5.6rem;
     border-radius: 50%;
     border: 1px solid ${({ theme }) => theme.colors.gray_200};
-    margin-left: .9rem;
   }
 
   > div {
     display: flex;
     flex-direction: column;
     margin-left:1.6rem;
-    line-height: 2rem;
+    line-height: 2.4rem;
 
     span {
-      position: relative;
-      left: 150px;
       font-size: 1.4rem;
       color: ${({ theme }) => theme.colors.gray_200};
     }
@@ -50,7 +45,6 @@ export const Profile = styled(Link)`
     strong {
       font-size: 1.8rem;
       color: ${({ theme }) => theme.colors.white};
-
     }
   }
 `;

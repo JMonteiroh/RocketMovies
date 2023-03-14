@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.button`
   width: 100%;
 
   background-color: ${({ theme }) => theme.colors.lightPurple};
@@ -22,7 +21,7 @@ export const Container = styled.div`
     margin-bottom: 0.8rem;
   }
 
-  > .stars {
+  > span {
     svg {
       color: ${({ theme }) => theme.colors.pink};
       font-size: 2rem;
