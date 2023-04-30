@@ -1,3 +1,4 @@
+import { MyContext } from '../../myContext'
 import { Container, Background, Form } from './styles';
 
 import { Input } from '../../Components/Input';
@@ -6,9 +7,13 @@ import { Button } from '../../Components/Button';
 import { Link } from 'react-router-dom';
 
 import { FiMail, FiLock } from 'react-icons/fi';
+import { useContext } from 'react';
 
 
 export function SignIn() {
+
+  const data = useContext(MyContext);
+
   return (
     <Container>
       <Form>
@@ -25,12 +30,12 @@ export function SignIn() {
 
         <Input
           placeholder='E-mail'
-          typy='text'
+          type='text'
           icon={FiMail}
         />
         <Input
           placeholder='Senha'
-          typy='password'
+          type='password'
           icon={FiLock}
         />
 

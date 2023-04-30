@@ -1,4 +1,6 @@
 import { Routes } from './routes';
+
+import { MyContext } from "./myContext";
  
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -11,7 +13,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={ theme }>
       <GlobalStyle />
-      <Routes />
+      <MyContext.Provider value={{email: 'joao@email.com'}}>
+        <Routes />
+      </MyContext.Provider>
     </ThemeProvider>
   </React.StrictMode>,
 )

@@ -1,8 +1,9 @@
+import { api } from '../../services/api'
+
 import { Container, Background, Form } from './styles';
 
 import { Input } from '../../Components/Input';
 import { Button } from '../../Components/Button';
-import { api } from '../../service/api'
 
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -23,11 +24,14 @@ export function SignUp() {
       return alert('Preencha todos os campos!')
     }
 
-    api.post('/users', { name, email, password})
-    .then(() => {alert('Usuário cadastrado com sucesso!')})
+    api.post("/users", { name, email, password })
+    .then(() => {
+      alert('Usuário cadastrado com sucesso!')
+      navigate('/')
+    })
     .catch(error => {
       if(error.response) {
-        alert(error.response.message)
+        alert(error.response.data.message)
       } else {
         alert('Não foi possível cadastrar.')
       }
