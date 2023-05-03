@@ -14,6 +14,7 @@ function AuthProvider({ children }) {
 
       api.defaults.headers.authorization = `Bearer ${token}`
       setData({ user, token });
+
     } catch (error) {
         if(error.response){
           alert(error.response.data.message)
@@ -22,7 +23,6 @@ function AuthProvider({ children }) {
         }
       }
   }
-
 
   return (
     <AuthContext.Provider value={{ 

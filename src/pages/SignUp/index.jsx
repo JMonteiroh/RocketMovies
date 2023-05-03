@@ -24,6 +24,7 @@ export function SignUp() {
       return alert('Preencha todos os campos!')
     }
 
+
     api.post("/users", { name, email, password })
     .then(() => {
       alert('Usuário cadastrado com sucesso!')
@@ -37,6 +38,7 @@ export function SignUp() {
       }
     })
   }
+
 
   return (
     <Container>
