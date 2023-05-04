@@ -6,7 +6,8 @@ import { Container, Profile, Brand, Logout } from "./styles";
 
 export function Header() {
 
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
+
 
   return (
     <Container>
@@ -18,14 +19,14 @@ export function Header() {
 
 
       <Logout>
-        <strong>João Paulo Monteiro</strong>
+        <strong>{user.name}</strong>
         <button onClick={signOut}>sair</button>
       </Logout>
 
       <Profile to='/profile'>
         <img 
-          src="http://github.com/jmonteiroh.png"
-          alt="Foto do usuário"
+          src={user.avatar}
+          alt={user.name}
         />
       </Profile>
 
