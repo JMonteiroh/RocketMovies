@@ -1,5 +1,6 @@
-import { FiArrowLeft, FiPlus, FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { FiArrowLeft } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import { Container, Form } from "./styles";
 
@@ -9,8 +10,43 @@ import { Textarea } from "../../Components/Textarea";
 import { Section } from "../../Components/Section";
 import { NoteItem } from "../../Components/NoteItem";
 import { Button } from "../../Components/Button";
+import { api } from "../../services/api";
  
 export function New() {
+
+  const [ title, setTitle ] = useState('');
+  const [ description, setDescription ] = useState('');
+  const [ rating, setRating ] = useState('');
+
+  const [ tags, setTags ] = useState([])
+  const [ newTag, setNewTag ] = useState('')
+
+  const navigate = useNavigate()
+
+
+  function handleAddTag() {
+    setTags(prevState => [...prevState, newTag]);
+    setNewTag("")
+  }
+
+  function handleRemoveTag(deleted) {
+    setTags(prevState => prevState.filter(tag => tag !== deleted));
+  }
+
+  async function handleNewNote() {
+    await api.post('/notes', {
+      title,
+      description,
+      rating,
+      tags,
+    });
+
+    alert('Nota criada com sucesso!');
+    navigate('/')
+  }
+
+
+
   return (
     <Container>
       <Header />
@@ -22,18 +58,46 @@ export function New() {
             <h1>Novo filme</h1>
           </header>
 
-          <div class='inputs'>
-            <Input placeholder="Título" />
-            <Input placeholder="Sua nota (de 0 a 5)" />
-            <Textarea placeholder="Observações" />
+          <div className='inputs'>
+            <Input 
+              placeholder="Título"
+              onChange={e => setTitle(e.target.value)}
+           />
+
+            <Input
+              placeholder="Sua nota (de 0 a 5)"
+              onChange={e => setRating(e.target.value)}
+            />
+
+            <Textarea
+              placeholder="Observações"
+              onChange={e => setDescription(e.target.value)}
+            />
           </div>
           <Section title='Marcadores'>
-            <NoteItem value='Ação'/>
-            <NoteItem isNew placeholder='Novo marcador' />
+            {
+              tags.map((tag, index) => (
+                <NoteItem 
+                  key={String(index)}
+                  value={tag}
+                  onClick={() => handleRemoveTag(tag)}
+                />
+              ))
+            }
+            <NoteItem 
+              isNew 
+              placeholder='Novo marcador'
+              onChange={e => setNewTag(e.target.value)}
+              value={newTag}
+              onClick={handleAddTag}
+            />
           </Section>
-          <div  class='buttons'>            
+          <div  className='buttons'>            
             <Button title='Excluir Filme' />
-            <Button title='Salvar Alterações' />
+            <Button 
+              title='Salvar Alterações' 
+              onClick={handleNewNote}
+            />
           </div>
 
         </Form>

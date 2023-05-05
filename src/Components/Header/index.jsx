@@ -3,10 +3,18 @@ import { FiSearch } from 'react-icons/fi'
 import { Input } from "../Input";
 import { useAuth } from '../../hooks/auth';
 import { Container, Profile, Brand, Logout } from "./styles";
+import { useNavigate } from 'react-router-dom';
 
 export function Header() {
-
   const { signOut, user } = useAuth();
+
+  const navigate = useNavigate()
+
+  function handleSignOut() {
+    navigate('/')
+    signOut()
+  }
+
 
 
   return (
@@ -20,7 +28,7 @@ export function Header() {
 
       <Logout>
         <strong>{user.name}</strong>
-        <button onClick={signOut}>sair</button>
+        <button onClick={handleSignOut}>sair</button>
       </Logout>
 
       <Profile to='/profile'>
