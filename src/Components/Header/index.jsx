@@ -4,17 +4,26 @@ import { Input } from "../Input";
 import { useAuth } from '../../hooks/auth';
 import { Container, Profile, Brand, Logout } from "./styles";
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-export function Header() {
+export function Header(props) {
+  const [search,  setSearch] = useState("")
   const { signOut, user } = useAuth();
 
   const navigate = useNavigate()
+
+  function handleChange(e) {
+    setSearch(e.target.value);
+    props.updateValue(e.target.value)
+    
+  }
+
 
   function handleSignOut() {
     navigate('/')
     signOut()
   }
-
+  
 
 
   return (
@@ -23,7 +32,12 @@ export function Header() {
         <h1>RocketMovies</h1>
       </Brand>
 
-      <Input placeholder="Pesquisar pelo título" icon={FiSearch} />
+      <Input
+       placeholder="Pesquisar pelo título" 
+       icon={FiSearch}
+       value={search}
+       onChange={handleChange}
+      />
 
 
       <Logout>
