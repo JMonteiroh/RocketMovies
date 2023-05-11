@@ -5,12 +5,17 @@ import { useAuth } from '../../hooks/auth';
 import { Container, Profile, Brand, Logout } from "./styles";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { api } from '../../services/api';
 
 export function Header(props) {
   const [search,  setSearch] = useState("")
   const { signOut, user } = useAuth();
 
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+
   const navigate = useNavigate()
+
+
 
   function handleChange(e) {
     setSearch(e.target.value);
@@ -47,7 +52,7 @@ export function Header(props) {
 
       <Profile to='/profile'>
         <img 
-          src={user.avatar}
+          src={avatarUrl}
           alt={user.name}
         />
       </Profile>
