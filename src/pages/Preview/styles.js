@@ -29,13 +29,18 @@ export const Content = styled.div`
   margin: 5rem;
   font-size: 3rem;
 
+    button {
 
-
-  > a {
-    font-size: 1.6rem;
-    color: ${({ theme }) => theme.colors.pink};
-    margin-bottom: 2.4rem;
-  }
+      display: flex;
+      align-items: center;
+      
+      border: none;
+      background: none;
+      font-size: 1.6rem;
+      color: ${({ theme }) => theme.colors.pink};
+      margin-bottom: 2.4rem;
+    }
+  
   > .title {
     display: flex;
     align-items: center;
@@ -91,5 +96,6 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     text-align: justify;
+    margin-bottom: 3rem;
   }
-`;
+`

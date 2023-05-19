@@ -1,18 +1,26 @@
 import { Container, Content } from "./styles";
 
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { Header } from "../../Components/Header";
 import { Section } from "../../Components/Section";
 import { Note } from "../../Components/Note";
-import { useState, useEffect } from "react";
 import { api } from "../../services/api";
 
 export  function Home() {
   const [search, setSearch] = useState('');
   const [notes, setNotes] = useState([]);
 
+  const navigate = useNavigate();
+
     
   function updateValue(value) {
     setSearch(value);
+  }
+
+  function handlePreview(id) {
+    navigate(`/preview/${id}`);
   }
 
 
@@ -39,6 +47,7 @@ export  function Home() {
               <Note
                 key={String(note.id)}
                 data={note}
+                onClick={() => handlePreview(note.id)}
               />
             ))
           }
