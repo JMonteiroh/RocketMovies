@@ -6,6 +6,8 @@ import { Container, Profile, Brand, Logout } from "./styles";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { api } from '../../services/api';
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
+
 
 export function Header(props) {
   const [search,  setSearch] = useState("")

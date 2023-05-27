@@ -7,6 +7,8 @@ import { FiArrowLeft, FiClock, FiStar } from "react-icons/fi";
 
 import { Header } from "../../Components/Header";
 import { Tag } from "../../Components/Tag";
+import { StarRating } from "../../Components/StarRating";
+
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
 
@@ -61,13 +63,10 @@ export function Preview() {
                 {data.title}
               </h1>
         
-              <span className="stars">
-                <FiStar />
-                <FiStar />
-                <FiStar />
-                <FiStar />
-                <FiStar />
-              </span>
+              <StarRating
+                rating={data.rating}
+              />
+
             </div>
         
         

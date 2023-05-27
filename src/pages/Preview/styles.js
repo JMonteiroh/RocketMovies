@@ -52,10 +52,6 @@ export const Content = styled.div`
       line-height: 4.7rem;
       color: ${({ theme }) => theme.colors.ice};
     }
-    .stars {
-      font-size: 2rem;
-      color: ${({ theme }) => theme.colors.pink};  
-    }
   }
 
   > .information {

@@ -6,5 +6,5 @@ export const Container = styled.span`
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.gray_700};
   color: ${({ theme }) => theme.colors.gray};
-  margin: 0 .8rem;
+  margin-right:.8rem;
 `;

@@ -1,19 +1,22 @@
 import { Container } from "./styles";
 import { Tag } from '../Tag';
-
-import { FiStar } from 'react-icons/fi';
+import { StarRating } from "../StarRating";
 
 export function Note({data, ...rest}) {
+
+
+  
+
+
   return (
     <Container {...rest} >
       <h1>{data.title}</h1>
-      <span>
-        <FiStar />
-        <FiStar />
-        <FiStar />
-        <FiStar />
-        <FiStar />
-      </span>
+      
+      <StarRating
+        className='stars'
+        rating={data.rating}
+      />
+
       <p>{data.description}</p>
 
       {

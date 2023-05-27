@@ -25,11 +25,7 @@ export const Container = styled.div`
   }
 
   > .stars {
-    svg {
-      color: ${({ theme }) => theme.colors.pink};
-      font-size: 2rem;
       margin-bottom: 1.5rem;
-    }
   }
 
   > p {
