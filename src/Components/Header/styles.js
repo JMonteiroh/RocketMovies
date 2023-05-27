@@ -56,10 +56,9 @@ export const Logout = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  align-items: flex-end;
 
     button {
-      position: relative;
-      left: 7.5rem;
       font-size: 1.4rem;
       color: ${({ theme }) => theme.colors.gray_200};
       border: none;
@@ -70,6 +69,7 @@ export const Logout = styled.div`
     strong {
       font-size: 1.8rem;
       color: ${({ theme }) => theme.colors.white};
+      
     }
 
 `;

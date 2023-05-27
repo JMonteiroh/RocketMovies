@@ -49,5 +49,9 @@ export const Container = styled.div`
     margin-bottom: 2.5rem;
   }
 
+  &:hover{
+    filter: brightness(0.6);
+  }
+
 
 `;

@@ -29,6 +29,8 @@ export function Preview() {
     navigate(-1)
   }
 
+
+
   useEffect(() => {
 
     async function fetchNote() {
@@ -38,6 +40,10 @@ export function Preview() {
 
     fetchNote();
   }, [])
+
+  function handleEditNote() {
+    navigate(`/edit/${params.id}`)
+  }
 
 
   return (
@@ -99,7 +105,9 @@ export function Preview() {
               {data.description}
             </p>
 
-            <button >Alterar </button>
+            <button onClick={handleEditNote} >
+              Alterar 
+            </button>
 
           
           </Content>

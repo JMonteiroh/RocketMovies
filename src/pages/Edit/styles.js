@@ -99,6 +99,12 @@ export const Form = styled.form`
     > button {
       font-weight: 500;
     }
+
+    > button:nth-child(1) {
+      background-color: ${(({ theme }) => theme.colors.black)};
+      color: ${({ theme }) => theme.colors.pink};
+    }
+
   }
 
 `;
