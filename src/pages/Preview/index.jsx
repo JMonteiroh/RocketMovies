@@ -8,6 +8,7 @@ import { FiArrowLeft, FiClock, FiStar } from "react-icons/fi";
 import { Header } from "../../Components/Header";
 import { Tag } from "../../Components/Tag";
 import { StarRating } from "../../Components/StarRating";
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
@@ -17,7 +18,6 @@ export function Preview() {
   const { user } = useAuth();
   
   const [ data, setData ] =useState(null);
-  const [ createdAt, setCreatedAt ] =useState(null);
   
   const params = useParams();
   const navigate = useNavigate();
@@ -80,7 +80,7 @@ export function Preview() {
               <FiClock />
         
               <span className="data">
-                {format(new Date(createdAt), 'dd/MM/yyyy')}
+                {format(new Date(data.created_at), 'dd/MM/yyyy')}
               </span>
         
               <p>
@@ -88,7 +88,7 @@ export function Preview() {
               </p>
         
               <span className="hour">
-                {format(new Date(createdAt), 'HH:mm')}
+                {format(new Date(data.created_at), 'HH:mm')}
               </span>
         
             </div>

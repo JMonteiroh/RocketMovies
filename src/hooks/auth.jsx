@@ -35,7 +35,7 @@ function AuthProvider({ children }) {
   }
 
   async function updateProfile({ user, avatarFile }) {
-    try {
+        try {
 
       if(avatarFile) {
         const fileUploadForm = new FormData()
@@ -44,18 +44,22 @@ function AuthProvider({ children }) {
         const response = await api.patch('/users/avatar', fileUploadForm);
         user.avatar = response.data.avatar;
       }
+      
+      const responseUser = await api.put('/users', user);
 
-      await api.put('/users', user);
+      user = responseUser.data
+      
       localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
-
+      
       setData({ user, token: data.token });
+      
 
       alert('Perfil atualizado!');
     } catch (error) {
       if(error.response) {
         alert(error.response.data.message)
       }else {
-        alert('Não foi possível atualizaro perfil.');
+        alert('Não foi possível atualizado perfil.');
       }
     }
   }

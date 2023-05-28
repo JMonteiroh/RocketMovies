@@ -37,6 +37,11 @@ export function Edit() {
     setEditTags(prevState => prevState.filter(tag => tag !== deleted));
   }
 
+  async function handleRemoveNote() {
+    await api.delete(`/notes/${params.id}`)
+    navigate('/')
+  }
+
   async function handleEditNote() {
     if(!editTitle) {
       return alert("Digite o título da nota!")
@@ -67,8 +72,12 @@ export function Edit() {
       const response = await api.get(`/notes/${params.id}`);
       const { title, description, rating, tags } = response.data;
 
-      setData({title, description, rating, tags})
+      setEditTitle(title)
+      setEditDescription(description)
+      setEditRating(rating)
+      setEditTags(tags)
 
+      
     }
     
     fetchNote();
@@ -91,19 +100,19 @@ export function Edit() {
           <div className='inputs'>
             <Input 
               placeholder="Título"
-              // value={data?.title}
+              value={editTitle}
               onChange={e => setEditTitle(e.target.value)}
            />
 
             <Input
               placeholder="Sua nota (de 0 a 5)"
-              // value={data?.rating}
+              value={editRating}
               onChange={e => setEditRating(e.target.value)}
             />
 
             <Textarea
               placeholder="Observações"
-              // value={data?.description}
+              value={editDescription}
               onChange={e => setEditDescription(e.target.value)}
             />
           </div>
@@ -112,7 +121,7 @@ export function Edit() {
               editTags.map((tag, index) => (
                 <NoteItem 
                   key={String(index)}
-                  value={tag}
+                  value={tag.name}
                   onClick={() => handleRemoveTag(tag)}
                 />
               ))
@@ -128,6 +137,7 @@ export function Edit() {
           <div  className='buttons'>            
             <Button
              title='Excluir Filme'
+             onClick={handleRemoveNote}
             />
             <Button 
               title='Salvar' 
