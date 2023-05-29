@@ -20,8 +20,6 @@ export function Edit() {
   const [ editTags, setEditTags ] = useState([])
   const [ editTag, setEditTag ] = useState('')
   
-  const [ data, setData ] = useState(null)
-
   const navigate = useNavigate()
   const params = useParams()
 
@@ -55,6 +53,10 @@ export function Edit() {
       return alert("Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio.")
     }
 
+
+
+
+
     await api.put(`/notes/${params.id}`, {
       title: editTitle,
       description: editDescription,
@@ -82,7 +84,7 @@ export function Edit() {
     
     fetchNote();
   }, [])
-  
+
 
 
 
@@ -121,7 +123,7 @@ export function Edit() {
               editTags.map((tag, index) => (
                 <NoteItem 
                   key={String(index)}
-                  value={tag.name}
+                  value={tag.name || tag} 
                   onClick={() => handleRemoveTag(tag)}
                 />
               ))
